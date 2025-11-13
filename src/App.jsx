@@ -1,9 +1,14 @@
-import React from 'react'
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
-const App = () => {
+export default function App() {
+  const [search, setSearch] = useState("");
+
   return (
-    <div>App</div>
-  )
+    <>
+      <Navbar search={search} setSearch={setSearch} />
+      <Home search={search} />
+    </>
+  );
 }
-
-export default App
